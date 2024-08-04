@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register - Gamer Vault</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">GAMER VAULT</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Browse Accounts</a></li>
+            <li><a href="#">Sell Accounts</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="auth.html">Login</a></li>
+            <li>
+                <a href="#">More <span>&#9660;</span></a>
+                <ul class="dropdown">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms of Service</a>
+                    <li><a href="#">Support</a></li></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- <div class="search-box">
+            <input type="text" placeholder="Search account..." id="search-input">
+            <ul class="suggestions" id="suggestions-list"></ul>
+        </div> -->
+    </div>
+
+    <!-- Auth Section -->
+    <div class="auth-container">
+        <div class="form-box">
+            <h1>Login</h1>
+            <form>
+                <div class="input-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="switch-form">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+            </form>
+        </div>
+        <div class="form-box">
+            <h1>Register</h1>
+            <form>
+                <div class="input-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-confirm-password">Confirm Password:</label>
+                    <input type="password" id="register-confirm-password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p class="switch-form">Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

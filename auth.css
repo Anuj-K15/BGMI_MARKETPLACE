@@ -1,0 +1,357 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 19px;
+    color: rgb(232, 232, 144);
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.navbar ul li a:hover {
+    background-color: #ffcc00;
+    border-radius: 4px;
+}
+
+.navbar ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    border-radius: 4px;
+}
+
+.navbar ul li:hover ul.dropdown {
+    display: block;
+}
+
+.navbar ul li ul.dropdown li {
+    padding: 10px 20px;
+}
+
+.navbar ul li ul.dropdown li a {
+    padding: 0;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 19px;
+}
+
+/* Hero Section */
+.hero {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    margin-top: 70px; /* Adjust for navbar height */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 249px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.hero h1.visible {
+    opacity: 1;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.main-buttons {
+    text-align: center;
+    margin-top: 99px;
+}
+
+.main-buttons .btn, .form-box .btn {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: white;
+    background: linear-gradient(to right, #ff6600, #ff3300);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main-buttons .btn:hover, .form-box .btn:hover {
+    background: linear-gradient(to right, #ff3300, #ff6600);
+    transform: scale(1.05);
+}
+
+/* Suggestions List */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: none; /* Hide initially */
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #ffcc00;
+}
+
+.suggestions.show {
+    display: block; /* Show when search input is focused or has results */
+}
+
+/* Featured Accounts Section */
+.featured-accounts {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.featured-accounts h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.account-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.account-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.account-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.account-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.account-item p {
+    font-size: 1.2em;
+    color: #ffcc00;
+}
+
+.account-item:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.testimonial-item p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-item h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Auth Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.7) 50%), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.form-box h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.switch-form {
+    margin-top: 15px;
+    color: #fff;
+}
+
+.switch-form a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}

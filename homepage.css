@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #f5f5f5;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%), url('afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,30 +71,41 @@ body {
 }
 
 .hero {
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
-    /* background: rgba(0, 0, 0, 0.6) url('afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif') no-repeat center center; */
     background-size: cover;
     margin-top: 70px; /* Adjust for navbar height */
+    padding: 20px;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero h1 {
     font-size: 3em;
-    margin-bottom: 249px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
     font-size: 1.5em;
+    margin: 10px 0;
+    max-width: 800px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
 }
 
+/* Main Buttons */
 .main-buttons {
     text-align: center;
-    margin-top: 99px;
+    margin-top: 50px;
 }
 
 .main-buttons .btn {
@@ -106,18 +117,19 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
     text-decoration: none;
     display: inline-block;
 }
 
 .main-buttons .btn:hover {
     background: linear-gradient(to right, #ff3300, #ff6600);
+    transform: scale(1.05);
 }
 
 .hero {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 65px;
 }
 
 .hero h1 {
@@ -128,7 +140,6 @@ body {
 .hero h1.visible {
     opacity: 1;
 }
-
 
 .navbar ul li ul.dropdown {
     display: none;
@@ -158,6 +169,7 @@ body {
     margin-left: 20px;
     position: relative;
 }
+
 .search-box {
     position: relative;
 }
@@ -196,6 +208,7 @@ body {
 .suggestions.show {
     display: block; /* Show when search input is focused or has results */
 }
+
 .account-details {
     display: none; /* Hide initially */
     margin-top: 20px;
@@ -221,4 +234,115 @@ body {
 .account-details p {
     font-size: 1.2em;
     margin: 5px 0;
+}
+
+/* Featured Accounts Section */
+.featured-accounts {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.featured-accounts h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.account-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.account-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.account-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.account-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.account-item p {
+    font-size: 1.2em;
+    color: #ffcc00;
+}
+
+.account-item:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.testimonial-item p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-item h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.2em;
 }
