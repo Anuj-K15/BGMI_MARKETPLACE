@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const showRegisterLink = document.getElementById('show-register');
     const showLoginLink = document.getElementById('show-login');
-    const loginForm = document.querySelector('.form-box:first-child');
-    const registerForm = document.querySelector('.form-box:last-child');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
 
     showRegisterLink.addEventListener('click', function (e) {
         e.preventDefault();

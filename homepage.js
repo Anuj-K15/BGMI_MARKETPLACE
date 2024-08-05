@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         heroTitle.classList.add('visible');
     }, 100); // Delay to allow CSS transition to be applied
-});
-document.addEventListener('DOMContentLoaded', () => {
+
     const input = document.getElementById('search-input');
     const suggestionsList = document.getElementById('suggestions-list');
 
@@ -12,29 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'ApexAssassin',
         'BattleBoss',
         'CosmicChampion',
-        'DarkDefender',
-        'EpicEnigma',
-        'FireFury',
-        'GhostGamer',
-        'HeroicHacker',
-        'InvincibleImmortal',
-        'JungleJester',
-        'KingKiller',
-        'LegendaryLancer',
-        'MysticMage',
-        'NinjaNexus',
-        'OverlordOne',
-        'PhantomPioneer',
-        'QuantumQuester',
-        'RogueRanger',
-        'StealthStriker',
-        'TitanTamer',
-        'UltimateUnderdog',
-        'VortexVanguard',
-        'WarriorWraith',
-        'XenonXplorer',
-        'YetiYar',
-        'ZephyrZenith'
+        // Add more accounts here
     ];
 
     input.addEventListener('input', () => {
@@ -64,6 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         if (!input.contains(event.target) && !suggestionsList.contains(event.target)) {
             suggestionsList.classList.remove('show');
+        }
+    });
+
+    // Sidebar toggle functionality
+    const sidebar = document.querySelector('.social-media-sidebar');
+    const toggleButton = document.querySelector('.sidebar-toggle');
+
+    toggleButton.addEventListener('click', () => {
+        if (sidebar.style.transform === 'translateX(0px)') {
+            sidebar.style.transform = 'translateX(-300px)';
+        } else {
+            sidebar.style.transform = 'translateX(0px)';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.social-media-sidebar');
+
+    toggleButton.addEventListener('click', () => {
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-250px'; // Hide sidebar
+        } else {
+            sidebar.style.left = '0px'; // Show sidebar
         }
     });
 });

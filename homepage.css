@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #f5f5f5;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 50%), url('assets/abc.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +26,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    cursor: pointer;
 }
 
 .navbar .brand {
@@ -55,9 +56,38 @@ body {
 }
 
 .navbar ul li a:hover {
-    background-color: #ffcc00;
+    /* background-color: #ffcc00; */
     border-radius: 4px;
 }
+/* Navbar Links */
+.center-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline Effect on Hover */
+.center-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed for spacing */
+    width: 100%;
+    height: 2px; /* Adjust thickness of underline */
+    background-color: #686764; /* Color of underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.center-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 
 .search-box {
     position: relative;
@@ -81,7 +111,6 @@ body {
     background-size: cover;
     margin-top: 70px; /* Adjust for navbar height */
     padding: 20px;
-    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -105,15 +134,16 @@ body {
 /* Main Buttons */
 .main-buttons {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 90px;
+    margin-right: 490px;
 }
 
 .main-buttons .btn {
-    padding: 15px 30px;
+    padding: 17px 30px;
     margin: 10px;
     font-size: 1.3em;
     color: white;
-    background: linear-gradient(to right, #ff6600, #ff3300);
+    background: linear-gradient(to right, #6a0e89, #171616);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -123,7 +153,7 @@ body {
 }
 
 .main-buttons .btn:hover {
-    background: linear-gradient(to right, #ff3300, #ff6600);
+    background: linear-gradient(to right, #6a0e89, #171616);
     transform: scale(1.05);
 }
 
@@ -139,6 +169,7 @@ body {
 
 .hero h1.visible {
     opacity: 1;
+    margin-top: -270px;
 }
 
 .navbar ul li ul.dropdown {
@@ -345,4 +376,257 @@ footer .social-links a {
     color: #ffcc00;
     text-decoration: none;
     font-size: 1.2em;
+}
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 19px;
+    color: rgb(232, 232, 144);
+    flex: 1;
+}
+
+.center-nav {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.center-nav ul li {
+    margin-left: 20px;
+}
+
+.center-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.center-nav ul li a:hover {
+    /* background-color: #ffcc00; */
+    border-radius: 4px;
+}
+
+.center-nav .search-box {
+    position: relative;
+}
+
+.center-nav .search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
+}
+
+.right-nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 19px;
+}
+
+.right-nav ul li {
+    margin-left: 20px;
+}
+
+.right-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.right-nav ul li a:hover {
+    /* background-color: #ffcc00; */
+    border-radius: 4px;
+}
+
+/* Search Suggestions */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: none; /* Hide initially */
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #ffcc00;
+}
+
+.suggestions.show {
+    display: block; /* Show when search input is focused or has results */
+}
+.right-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(45deg, #ff6600, #ff3300);
+    background-size: 200% 200%;
+}
+
+.right-nav ul li a:hover {
+    background-position: right center; /* Change the direction of the gradient */
+    color: #fff;
+    border-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* Adding a glowing effect on hover */
+.right-nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 204, 0, 0.2);
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.right-nav ul li a:hover::before {
+    opacity: 1;
+}
+/* Adjusting icon size and spacing */
+.center-nav ul li a i {
+    margin-right: 8px;
+    font-size: 1.1em; /* Adjust icon size */
+    vertical-align: middle;
+}
+/* Search Box */
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+.search-box input {
+    padding: 10px 40px 10px 10px; /* Add right padding for the icon */
+    border: none;
+    border-radius: 4px;
+    width: 390px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 26px;
+    transform: translateY(-50%);
+    color: rgb(31, 20, 20); /* Adjust the color */
+    font-size: 1.2em;
+    pointer-events: none; /* Make the icon unclickable */
+}
+/* Social Media Sidebar */
+/* Social Media Sidebar */
+.social-media-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(-300px); /* Start hidden */
+}
+/* Hide the sidebar toggle button visually but keep it accessible */
+.sidebar-toggle {
+    position: fixed;
+    top: 200px;
+    left: 1px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.sidebar-toggle:focus {
+    outline: none;
+}
+
+/* Sidebar */
+.social-media-sidebar {
+    position: fixed;
+    top: 200px;
+    left: 200px; /* Initially hide the sidebar */
+    width: 20px;
+    /* height: px; */
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.social-media-sidebar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media-sidebar a:hover {
+    color: #ffcc00;
 }

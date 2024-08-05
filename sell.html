@@ -28,7 +28,7 @@
                         <p>Level: 50 | Rank: Gold</p>
                         <p>Price: $100</p>
                     </div>
-                    <button class="contact-button"  onclick="contactSeller('Game 1')">Contact Seller</button>
+                    <button class="contact-button" onclick="contactSeller('Game 1')">Contact Seller</button>
                 </div>
                 <div class="account-item">
                     <img src="bgmi-53iv6fl796p3l763.jpg" alt="Game 2">
@@ -48,34 +48,6 @@
                     </div>
                     <button class="contact-button" onclick="contactSeller('Game 3')">Contact Seller</button>
                 </div>
-                <div class="account-item">
-                    <img src="bgmi-53iv6fl796p3l763.jpg" alt="Game 3">
-                    <div class="account-details">
-                        <h3>Account for Game 3</h3>
-                        <p>Level: 70 | Rank: Platinum</p>
-                        <p>Price: $150</p>
-                    </div>
-                    <button class="contact-button" onclick="contactSeller('Game 3')">Contact Seller</button>
-                </div>
-                <div class="account-item">
-                    <img src="bgmi-53iv6fl796p3l763.jpg" alt="Game 3">
-                    <div class="account-details">
-                        <h3>Account for Game 3</h3>
-                        <p>Level: 70 | Rank: Platinum</p>
-                        <p>Price: $150</p>
-                    </div>
-                    <button class="contact-button" onclick="contactSeller('Game 3')">Contact Seller</button>
-                </div>
-                <div class="account-item">
-                    <img src="bgmi-53iv6fl796p3l763.jpg" alt="Game 3">
-                    <div class="account-details">
-                        <h3>Account for Game 3</h3>
-                        <p>Level: 70 | Rank: Platinum</p>
-                        <p>Price: $150</p>
-                    </div>
-                    <button class="contact-button" onclick="contactSeller('Game 3')">Contact Seller</button>
-                </div>
-                <!-- Add more accounts as needed -->
             </div>
         </section>
         
@@ -88,6 +60,27 @@
     <footer>
         <p>&copy; 2024 Gaming Account Sales. All rights reserved.</p>
     </footer>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Contact Seller</h2>
+            <p id="modal-game-name"></p>
+            <form id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
 
     <script src="sell.js"></script>
 </body>

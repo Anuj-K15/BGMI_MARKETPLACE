@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Elite Gaming Account',
             game: 'Fortnite',
             price: '$49.99',
-            image: 'afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif'
+            image:'assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif'
         },
         {
             name: 'Pro Gamer Account',
             game: 'Apex Legends',
             price: '$59.99',
-            image: 'account2.jpg'
+            image: 'assets/afkgaming_2023-01_87a9ec24-dcde-4dd3-96fc-e0e68eb5c636_Cover_Image___Most_Searched_BGMI_Players_In_2022.avif'
         },
         {
             name: 'Pro Gamer Account',
