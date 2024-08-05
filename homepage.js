@@ -58,13 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector('.social-media-sidebar');
+    const sidebar = document.querySelector('.premium-sidebar');
 
     toggleButton.addEventListener('click', () => {
-        if (sidebar.style.left === '0px') {
+        if (sidebar.style.left === '10px') {
             sidebar.style.left = '-250px'; // Hide sidebar
         } else {
-            sidebar.style.left = '0px'; // Show sidebar
+            sidebar.style.left = '48px'; // Show sidebar
         }
     });
 });
