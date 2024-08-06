@@ -4,38 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register - Gamer Vault</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>Login - Gamer Vault</title>
     <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="brand">GAMER VAULT</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Browse Accounts</a></li>
-            <li><a href="#">Sell Accounts</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="homepage.html">Logout</a></li>
-            <li>
-                <a href="#">More <span>&#9660;</span></a>
-                <ul class="dropdown">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </li>
-        </ul>
+        <div class="brand">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAMER VAULT</span>
+        </div>
+        <div class="center-nav">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search Accounts Here">
+                <i class="fas fa-search search-icon"></i>
+                <ul id="suggestions-list" class="suggestions"></ul>
+            </div>
+            <ul>
+                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> How to Buy</a></li>
+                <li><a href="sell.html"><i class="fas fa-dollar-sign"></i> How to Sell</a></li>
+            </ul>
+        </div>
+        <div class="right-nav">
+            <ul>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Auth Section -->
     <div class="auth-container">
-        <div class="form-box" id="login-form">
-            <h1>Login</h1>
+        <div class="form-box">
+            <h1>Login Your Account</h1>
             <form>
                 <div class="input-group">
                     <label for="login-email">Email:</label>
@@ -43,9 +45,13 @@
                 </div>
                 <div class="input-group">
                     <label for="login-password">Password:</label>
-                    <input type="password" placeholder="Enter Password" id="login-password" name="password" required>
+                    <input type="password" placeholder="Enter Your Password" id="login-password" name="password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <div class="input-group">
+                    <input type="checkbox" id="remember-me" name="remember">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <button type="submit" class="btn"><a href="homepage.html">Login</a></button>
                 <p class="switch-form">Don't have an account? <a href="#" id="show-register">Register here</a></p>
             </form>
         </div>
@@ -67,6 +73,8 @@
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <p class="switch-form">Already have an account? <a href="#" id="show-login">Login here</a></p>
+                <p class="switch-form">Don't have an account? <a href="signup.html">Register here</a></p>
+                <p class="forgot-password"><a href="#">Forgot your password?</a></p>
             </form>
         </div>
     </div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Gamer Vault</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAMER VAULT</span>
+        </div>
+        <div class="center-nav">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search Accounts Here">
+                <i class="fas fa-search search-icon"></i>
+                <ul id="suggestions-list" class="suggestions"></ul>
+            </div>
+            <ul>
+                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> How to Buy</a></li>
+                <li><a href="sell.html"><i class="fas fa-dollar-sign"></i> How to Sell</a></li>
+            </ul>
+        </div>
+        <div class="right-nav">
+            <ul>
+                <li><a href="auth.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Auth Section -->
+    <div class="auth-container">
+        <div class="form-box">
+            <h1>Create an Account</h1>
+            <form>
+                <div class="input-group">
+                    <label for="register-username">Username:</label>
+                    <input type="text" placeholder="Enter Your Username" id="register-username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" placeholder="Enter Your Email" id="register-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Password:</label>
+                    <input type="password" placeholder="Enter Password" id="register-password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-confirm-password">Confirm Password:</label>
+                    <input type="password" placeholder="Confirm Password" id="register-confirm-password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p class="switch-form">Already have an account? <a href="auth.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>

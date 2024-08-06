@@ -6,18 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Accounts for Sale</title>
     <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <header>
-        <h1>Gaming Accounts for Sale</h1>
-        <nav>
+
+    <!-- Navbar Start -->
+    <div class="navbar">
+        <div class="brand">
+            <img src="assets/logo.png" alt="" class="logo"><i class="fa-solid fa-gamepad"></i>
+            <span>GAMER VAULT</span>
+        </div>
+        <div class="center-nav">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search Accounts Here">
+                <i class="fas fa-search search-icon"></i>
+                <ul id="suggestions-list" class="suggestions"></ul>
+            </div>
             <ul>
-                <li><a href="#accounts">Accounts</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="sell.html"><i class="fas fa-dollar-sign"></i>How to Sell</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+        <div class="right-nav">
+            <ul>
+                <li><a href="auth.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="#" id="orders-button">Orders</a></li> <!-- Orders Button Added -->
+            </ul>
+        </div>
+    </div>
+    <!-- Navbar End -->
 
     <main>
         <section id="accounts">
@@ -27,10 +45,11 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are dedicated to providing high-quality gaming accounts for your favorite games. All accounts are
-                verified and come with a guarantee. If you have any questions, feel free to contact us!</p>
+        <section id="orders" style="display: none;"> <!-- Orders Section initially hidden -->
+            <h2>Your Orders</h2>
+            <div id="orders-list">
+                <p>No orders placed yet.</p>
+            </div>
         </section>
     </main>
 
@@ -68,8 +87,7 @@
                 <div class="form-section">
                     <h4>Billing Address</h4>
                     <label for="billingAddress">Billing Address:</label>
-                    <input type="text" id="billingAddress" name="billingAddress"
-                        placeholder="123 Main St, City, Country" required>
+                    <input type="text" id="billingAddress" name="billingAddress" placeholder="123 Main St, City, Country" required>
                 </div>
                 <button type="submit">Complete Purchase</button>
             </form>
