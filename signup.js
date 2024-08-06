@@ -17,15 +17,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Handle registration form submission
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const username = document.getElementById('register-username').value;
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
     const confirmPassword = document.getElementById('register-confirm-password').value;
-    
+
     if (password !== confirmPassword) {
         alert('Passwords do not match');
         return;
@@ -33,16 +32,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            // You can save the username or other user info in your database here if needed
+            // Save the username and email in localStorage
+            localStorage.setItem('user', JSON.stringify({ email: userCredential.user.email, username }));
 
-            // Redirect to main page
-            window.location.href = 'auth.html'; // replace 'homepage.html' with your main page URL
+            // Redirect to login page
+            window.location.href = 'auth.html';
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
+            alert(`Error: ${error.message}`);
         });
 });

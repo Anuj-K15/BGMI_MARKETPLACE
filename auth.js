@@ -17,24 +17,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Handle login form submission
 document.getElementById('login-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
+            // Save the username in localStorage (assuming username was saved during registration)
+            const username = JSON.parse(localStorage.getItem('user')).username || email.split('@')[0];
+            localStorage.setItem('user', JSON.stringify({ email: userCredential.user.email, username }));
 
-            // Redirect to main page
-            window.location.href = 'homepage.html'; // replace 'homepage.html' with your main page URL
+            // Redirect to homepage
+            window.location.href = 'homepage.html';
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
+            alert(`Error: ${error.message}`);
         });
 });

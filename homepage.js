@@ -136,3 +136,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (signupLink) signupLink.style.display = 'none';
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const loginLink = document.querySelector('.right-nav a[href="auth.html"]');
+    const signupLink = document.querySelector('.right-nav a[href="signup.html"]');
+    const rightNav = document.querySelector('.right-nav ul');
+
+    if (user) {
+        // Hide login and signup links
+        if (loginLink) loginLink.style.display = 'none';
+        if (signupLink) signupLink.style.display = 'none';
+
+        // Create and display the username element
+        const usernameElement = document.createElement('li');
+        usernameElement.textContent = `Welcome, ${user.username}`;
+        rightNav.appendChild(usernameElement);
+    }
+});
