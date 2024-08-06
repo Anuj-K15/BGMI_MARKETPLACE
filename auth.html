@@ -38,7 +38,7 @@
     <div class="auth-container">
         <div class="form-box">
             <h1>Login Your Account</h1>
-            <form>
+            <form id="login-form">
                 <div class="input-group">
                     <label for="login-email">Email:</label>
                     <input type="email" placeholder="Enter Your Email" id="login-email" name="email" required>
@@ -51,59 +51,13 @@
                     <input type="checkbox" id="remember-me" name="remember">
                     <label for="remember-me">Remember Me</label>
                 </div>
-                <button type="submit" class="btn"><a href="homepage.html">Login</a></button>
-                <p class="switch-form">Don't have an account? <a href="#" id="show-register">Register here</a></p>
-            </form>
-        </div>
-        <div class="form-box" id="register-form" style="display:none;">
-            <h1>Register</h1>
-            <form>
-                <div class="input-group">
-                    <label for="register-email">Email:</label>
-                    <input type="email" placeholder="Enter Your Email" id="register-email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="register-password">Password:</label>
-                    <input type="password" placeholder="Enter Password" id="register-password" name="password" required>
-                </div>
-                <div class="input-group">
-                    <label for="register-confirm-password">Confirm Password:</label>
-                    <input type="password" placeholder="confirm-password" id="register-confirm-password"
-                        name="confirm_password" required>
-                </div>
-                <button type="submit" class="btn">Register</button>
-                <p class="switch-form">Already have an account? <a href="#" id="show-login">Login here</a></p>
-                <p class="switch-form">Don't have an account? <a href="signup.html">Register here</a></p>
-                <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+                <button type="submit" class="btn">Login</button>
+                <p class="switch-form">Don't have an account? <a href="signup.html" id="show-register">Register here</a></p>
             </form>
         </div>
     </div>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"></script>
-
-    <script>
-        // Your Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyClruPNlwlQ-n53bnn00wYPVcEqrY1ZpwE",
-            authDomain: "gamer-vault-2024.firebaseapp.com",
-            projectId: "gamer-vault-2024",
-            storageBucket: "gamer-vault-2024.appspot.com",
-            messagingSenderId: "482142111325",
-            appId: "1:482142111325:web:b3bd6ce632079f9b82efb4",
-            measurementId: "G-RGW7JT3FD0"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Initialize services
-        const auth = firebase.auth();
-        const db = firebase.database();
-    </script>
-    <script src="auth.js"></script>
+    <script src="auth.js" type="module"></script>
 </body>
 
 </html>

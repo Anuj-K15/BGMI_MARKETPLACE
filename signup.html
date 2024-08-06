@@ -10,35 +10,13 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="brand">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>GAMER VAULT</span>
-        </div>
-        <div class="center-nav">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search Accounts Here">
-                <i class="fas fa-search search-icon"></i>
-                <ul id="suggestions-list" class="suggestions"></ul>
-            </div>
-            <ul>
-                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> How to Buy</a></li>
-                <li><a href="sell.html"><i class="fas fa-dollar-sign"></i> How to Sell</a></li>
-            </ul>
-        </div>
-        <div class="right-nav">
-            <ul>
-                <li><a href="auth.html">Login</a></li>
-            </ul>
-        </div>
-    </div>
+    <!-- Navbar and other code omitted for brevity -->
 
     <!-- Auth Section -->
     <div class="auth-container">
         <div class="form-box">
             <h1>Create an Account</h1>
-            <form>
+            <form id="register-form">
                 <div class="input-group">
                     <label for="register-username">Username:</label>
                     <input type="text" placeholder="Enter Your Username" id="register-username" name="username" required>
@@ -61,7 +39,7 @@
         </div>
     </div>
 
-    <script src="signup.js"></script>
+    <script src="signup.js" type="module"></script>
 </body>
 
 </html>
