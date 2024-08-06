@@ -135,7 +135,7 @@ body {
 .main-buttons {
     text-align: center;
     margin-top: 90px;
-    margin-right: 490px;
+    /* margin-right: 100px; */
 }
 
 .main-buttons .btn {
