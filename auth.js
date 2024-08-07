@@ -25,8 +25,11 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Save the username in localStorage (assuming username was saved during registration)
-            const username = JSON.parse(localStorage.getItem('user')).username || email.split('@')[0];
+            // Check if the username exists in localStorage, if not use a default value
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+            const username = storedUser ? storedUser.username : email.split('@')[0];
+            
+            // Update localStorage with current email and username
             localStorage.setItem('user', JSON.stringify({ email: userCredential.user.email, username }));
 
             // Redirect to homepage

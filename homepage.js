@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             document.getElementById('logout-link').addEventListener('click', () => {
                 localStorage.removeItem('user');
-                window.location.href = 'auth.html';
+                window.location.href = 'homepage.html';
             });
         }
     }
