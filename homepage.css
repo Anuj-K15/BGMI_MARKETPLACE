@@ -91,6 +91,7 @@ body {
 
 .search-box {
     position: relative;
+    margin-left: -50px;
 }
 
 .search-box input {
