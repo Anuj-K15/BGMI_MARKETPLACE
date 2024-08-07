@@ -5,7 +5,92 @@ body {
     background-color: #121212;
     color: #f0f0f0;
 }
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
 
+.navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 19px;
+    color: rgb(232, 232, 144);
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.navbar ul li a:hover {
+    /* background-color: #ffcc00; */
+    border-radius: 4px;
+}
+/* Navbar Links */
+.center-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline Effect on Hover */
+.center-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed for spacing */
+    width: 100%;
+    height: 2px; /* Adjust thickness of underline */
+    background-color: #686764; /* Color of underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.center-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.search-box {
+    position: relative;
+    margin-left: -50px;
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 19px;
+}
 header {
     background: linear-gradient(45deg, #e74c3c, #111);
     color: #f0f0f0;

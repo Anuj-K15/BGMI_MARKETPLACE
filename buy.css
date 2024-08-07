@@ -1,105 +1,135 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
     color: #f0f0f0;
 }
 
-header {
-    background: linear-gradient(45deg, #e74c3c, #111);
-    color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 4px solid #e74c3c;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #f0f0f0;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    color: #e74c3c;
-}
-
-main {
-    padding: 20px;
-}
-
-.account-card,
-.account-item {
-    background: #1f1f1f;
-    border: 1px solid #333;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    margin-bottom: 20px;
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
     padding: 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    cursor: pointer;
 }
 
-.account-card:hover,
+.navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 19px;
+    color: rgb(232, 232, 144);
+    
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.navbar ul li a:hover {
+    border-radius: 4px;
+}
+
+.center-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #686764;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.center-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.search-box {
+    position: relative;
+    margin-left: 25px;
+    padding-left: 55px;
+
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 19px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 1.2em;
+    pointer-events: none;
+}
+
+.account-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+}
+
+.account-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.account-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.account-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.account-item p {
+    font-size: 1.2em;
+    color: #ffcc00;
+}
+
 .account-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
-    background: #2c2c2c;
-}
-
-.account-info,
-.account-details {
-    flex: 1;
-}
-
-.account-info h2,
-.account-item h3 {
-    margin-top: 0;
-    color: #e74c3c;
-}
-
-.account-info p,
-.account-item p {
-    margin: 5px 0;
-}
-
-button,
-.contact-button {
-    background-color: #e74c3c;
-    border: none;
-    border-radius: 8px;
-    color: #121212;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover,
-.contact-button:hover {
-    background-color: #c0392b;
 }
 
 footer {
@@ -114,18 +144,6 @@ footer p {
     margin: 0;
 }
 
-.account-item img {
-    width: 120px;
-    height: 80px;
-    border-radius: 8px;
-    margin-right: 20px;
-}
-
-.contact-button {
-    font-size: 1rem;
-}
-
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -136,114 +154,120 @@ footer p {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    padding-top: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     background-color: #2c2c2c;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
     color: #f0f0f0;
-    padding: 30px;
-    max-width: 600px;
-    margin: 5% auto;
-    border: 1px solid #333;
-}
-
-.modal-content h3 {
-    color: #e74c3c;
 }
 
 .modal-content img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.close {
-    color: #aaa;
+.modal-content h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.modal-content .close {
+    color: #f0f0f0;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #f0f0f0;
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+button#confirmPurchase {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+button#confirmPurchase:hover {
+    background-color: #c0392b;
 }
 
 .payment-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .payment-form .form-section {
-    background: #2c2c2c;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.payment-form .form-section h4 {
-    margin-top: 0;
-    color: #e74c3c;
+    margin-bottom: 20px;
 }
 
 .payment-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-size: 1.1em;
 }
 
 .payment-form input {
-    padding: 12px;
-    border: 1px solid #333;
-    border-radius: 8px;
-    background: #1f1f1f;
-    color: #f0f0f0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
     width: 100%;
-    box-sizing: border-box;
 }
 
-.payment-form button,
-.payment-option-button {
+.payment-form button {
+    padding: 10px 20px;
     background-color: #e74c3c;
     border: none;
-    border-radius: 8px;
-    color: #121212;
-    padding: 12px;
+    border-radius: 4px;
+    color: #fff;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+    font-size: 1em;
+    transition: background 0.3s;
 }
 
-.payment-form button:hover,
-.payment-option-button:hover {
+.payment-form button:hover {
     background-color: #c0392b;
 }
 
 .payment-options {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
 .payment-options img {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
+    width: 50px;
     cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.confirmation {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2rem;
+.payment-options img:hover {
+    transform: scale(1.1);
 }
+
+/* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
@@ -256,6 +280,7 @@ footer p {
     top: 0;
     left: 0;
     z-index: 1000;
+    cursor: pointer;
 }
 
 .navbar .brand {
@@ -263,7 +288,6 @@ footer p {
     font-weight: bold;
     margin-left: 19px;
     color: rgb(232, 232, 144);
-    flex: 1;
 }
 
 .center-nav {
@@ -292,19 +316,78 @@ footer p {
 }
 
 .center-nav ul li a:hover {
-    /* background-color: #ffcc00; */
     border-radius: 4px;
 }
 
-.center-nav .search-box {
-    position: relative;
+/* Underline Effect on Hover */
+.center-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #686764;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
 }
 
-.center-nav .search-box input {
-    padding: 10px;
+.center-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+.search-box input {
+    padding: 10px 40px 10px 10px;
     border: none;
     border-radius: 4px;
-    width: 400px;
+    width: 390px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 26px;
+    transform: translateY(-50%);
+    color: rgb(31, 20, 20);
+    font-size: 1.2em;
+    pointer-events: none;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #ffcc00;
+}
+
+.suggestions.show {
+    display: block;
 }
 
 .right-nav ul {
@@ -321,47 +404,6 @@ footer p {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    transition: background 0.3s;
-    font-size: 1.1em;
-}
-
-.right-nav ul li a:hover {
-    /* background-color: #ffcc00; */
-    border-radius: 4px;
-}
-
-/* Search Suggestions */
-.suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display: none; /* Hide initially */
-}
-
-.suggestions li {
-    padding: 10px 20px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.suggestions li:hover {
-    background-color: #ffcc00;
-}
-
-.suggestions.show {
-    display: block; /* Show when search input is focused or has results */
-}
-.right-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
     font-size: 1.1em;
     border: 2px solid transparent;
     border-radius: 4px;
@@ -374,7 +416,7 @@ footer p {
 }
 
 .right-nav ul li a:hover {
-    background-position: right center; /* Change the direction of the gradient */
+    background-position: right center;
     color: #fff;
     border-color: #ffcc00;
     transform: scale(1.05);
@@ -382,7 +424,7 @@ footer p {
 
 /* Adding a glowing effect on hover */
 .right-nav ul li a::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -397,33 +439,4 @@ footer p {
 
 .right-nav ul li a:hover::before {
     opacity: 1;
-}
-/* Adjusting icon size and spacing */
-.center-nav ul li a i {
-    margin-right: 8px;
-    font-size: 1.1em; /* Adjust icon size */
-    vertical-align: middle;
-}
-/* Search Box */
-.search-box {
-    position: relative;
-    display: inline-block;
-}
-
-.search-box input {
-    padding: 10px 40px 10px 10px; /* Add right padding for the icon */
-    border: none;
-    border-radius: 4px;
-    width: 390px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.search-icon {
-    position: absolute;
-    top: 50%;
-    right: 26px;
-    transform: translateY(-50%);
-    color: rgb(31, 20, 20); /* Adjust the color */
-    font-size: 1.2em;
-    pointer-events: none; /* Make the icon unclickable */
 }
