@@ -565,23 +565,29 @@ footer .social-links a {
 /* Social Media Sidebar */
 /* Social Media Sidebar */
 /* Premium Sidebar Styles */
+/* Sidebar Styles */
 .premium-sidebar {
     position: fixed;
-    top: 23%;
-    left: -250px;
-    transform: translateY(-50%);
+    top: 24%;
+    left: 0; /* Set to 0 to align with the viewport */
+    transform: translateX(-250px); /* Adjust based on the width */
     background: linear-gradient(45deg, #ff0076, #590fb7);
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     padding: 20px;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
     z-index: 1000;
-    width: 0px;
+    width: 45px; /* Adjust width based on design */
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 45px;
 }
 
+/* Active state for the sidebar */
+.premium-sidebar.active {
+    transform: translateX(0); /* Slide into view */
+}
 
 .premium-sidebar a {
     color: #fff;

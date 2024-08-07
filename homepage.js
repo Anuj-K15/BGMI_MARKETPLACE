@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('.sidebar-toggle');
 
     toggleButton.addEventListener('click', () => {
-        if (sidebar.style.transform === 'translateX(0px)') {
-            sidebar.style.transform = 'translateX(-300px)';
+        if (sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
         } else {
-            sidebar.style.transform = 'translateX(0px)';
+            sidebar.classList.add('active');
         }
     });
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userNav = document.getElementById('user-nav');
 
         if (user) {
-            userNav.innerHTML = `<li>Welcome, ${user.username || user.email}</li><li><a href="#" id="logout-link">Logout</a></li>`;
+            userNav.innerHTML = `<li><i class="fa-solid fa-user"></i> Welcome, ${user.username || user.email}</li><li><a href="#" id="logout-link">Logout</a></li>`;
             
             document.getElementById('logout-link').addEventListener('click', () => {
                 localStorage.removeItem('user');
