@@ -284,9 +284,15 @@ button#confirmPurchase:hover {
 }
 
 .navbar .brand {
+    text-decoration: none !important;
     font-size: 1.8em;
     font-weight: bold;
     margin-left: 19px;
+    
+}
+
+.navbar .brand a {
+    text-decoration: none;
     color: rgb(232, 232, 144);
 }
 
