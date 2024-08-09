@@ -1,37 +1,36 @@
-// // // Sample data for available accounts
-// // const accounts = [
-// //     { id: 1, name: 'Epic Warrior', game: 'Clash of Clans', price: 99, image: 'assets/abc.jpg' },
-// //     { id: 2, name: 'Master Strategist', game: 'Clash Royale', price: 149, image: 'assets/clash-royale.jpg' },
-// //     { id: 3, name: 'Super Survivor', game: 'PUBG Mobile', price: 199, image: 'assets/pubg-mobile.jpg' }
-// // ];
+// // Sample data for available accounts
+// const accounts = [
+//     { id: 1, name: 'Epic Warrior', game: 'Clash of Clans', price: 99, image: 'assets/abc.jpg' },
+//     { id: 2, name: 'Master Strategist', game: 'Clash Royale', price: 149, image: 'assets/clash-royale.jpg' },
+//     { id: 3, name: 'Super Survivor', game: 'PUBG Mobile', price: 199, image: 'assets/pubg-mobile.jpg' }
+// ];
 
-// // const accountsList = document.getElementById('accounts-list');
-// // const suggestionsList = document.getElementById('suggestions-list');
+// const accountsList = document.getElementById('accounts-list');
+// const suggestionsList = document.getElementById('suggestions-list');
 
-// // // Load available accounts into the main section
-// // window.onload = function() {
-// //     loadAccounts();
-// // };
+// // Load available accounts into the main section
+// window.onload = function() {
+//     loadAccounts();
+// };
 
-// // function loadAccounts() {
-// //     accountsList.innerHTML = '';
-// //     accounts.forEach(account => {
-// //         const accountItem = document.createElement('div');
-// //         accountItem.classList.add('account-item');
-// //         accountItem.innerHTML = `
-// //             <img src="${account.image}" alt="${account.name}">
-// //             <div class="account-details">
-// //                 <h3>${account.name}</h3>
-// //                 <p>Game: ${account.game}</p>
-// //                 <p>Price: $${account.price}</p>
-// //                 <button onclick="showAccountDetails(${account.id})">View Details</button>
-// //             </div>
-// //         `;
-// //         accountsList.appendChild(accountItem);
-// //     });
-// // }
+// function loadAccounts() {
+//     accountsList.innerHTML = '';
+//     accounts.forEach(account => {
+//         const accountItem = document.createElement('div');
+//         accountItem.classList.add('account-item');
+//         accountItem.innerHTML = `
+//             <img src="${account.image}" alt="${account.name}">
+//             <div class="account-details">
+//                 <h3>${account.name}</h3>
+//                 <p>Game: ${account.game}</p>
+//                 <p>Price: $${account.price}</p>
+//                 <button onclick="showAccountDetails(${account.id})">View Details</button>
+//             </div>
+//         `;
+//         accountsList.appendChild(accountItem);
+//     });
+// }
 
-// // Order List
 // let orders = [];
 
 // // Function to show account details in a modal
