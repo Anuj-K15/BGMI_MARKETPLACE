@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.account-name {
+    font-size: 36px;
+    /* Increased font size */
+    margin-bottom: 20px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.image-box {
+    flex: 1;
+    max-width: 250px;
+    /* Adjusted width for better layout */
+    max-height: 250px;
+    margin: 0 10px;
+}
+
+.image-box img {
+    width: 110%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 20px;
+    /* Increased font size */
+    line-height: 1.5;
+}
+
+.buy-now-button {
+    background-color: #e53935;
+    border: none;
+    color: #ffffff;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-size: 18px;
+    /* Increased font size */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-now-button:hover {
+    background-color: #d32f2f;
+}

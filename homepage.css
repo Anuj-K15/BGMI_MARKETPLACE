@@ -206,12 +206,7 @@ body {
     position: relative;
 }
 
-.search-box input {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 19px;
-}
+
 
 .suggestions {
     position: absolute;
@@ -378,20 +373,7 @@ footer .social-links a {
     text-decoration: none;
     font-size: 1.2em;
 }
-/* Navbar */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
+
 
 .navbar .brand {
     font-size: 1.8em;
@@ -558,7 +540,7 @@ footer .social-links a {
     top: 50%;
     right: 26px;
     transform: translateY(-50%);
-    color: rgb(31, 20, 20); /* Adjust the color */
+    color: rgb(199, 199, 199); /* Adjust the color */
     font-size: 1.2em;
     pointer-events: none; /* Make the icon unclickable */
 }

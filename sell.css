@@ -1,9 +1,10 @@
+/* Basic resets and body styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
+
 body {
     font-family: Arial, sans-serif;
     color: #f5f5f5;
@@ -14,10 +15,8 @@ body {
     background-attachment: fixed;
 }
 
-
-/* Navbar */
 .navbar {
-    background-color:black;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 15px;
     display: flex;
@@ -31,27 +30,81 @@ body {
     cursor: pointer;
 }
 
+.navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 19px;
+    color: rgb(232, 232, 144);
+}
+
+.navbar .brand a{
+    text-decoration: none;
+    color: rgb(232, 232, 144);
+}
+
 .navbar ul {
     list-style-type: none;
     display: flex;
+    flex: 1;
     justify-content: center;
 }
 
 .navbar ul li {
     margin-left: 20px;
-    position: relative;
 }
 
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 1.1em;
     transition: background 0.3s;
+    font-size: 1.1em;
 }
 
 .navbar ul li a:hover {
+    /* background-color: #ffcc00; */
     border-radius: 4px;
+}
+/* Navbar Links */
+.center-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline Effect on Hover */
+.center-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed for spacing */
+    width: 100%;
+    height: 2px; /* Adjust thickness of underline */
+    background-color: #686764; /* Color of underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.center-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.search-box {
+    position: relative;
+    margin-left: -50px;
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 19px;
 }
 
 .navbar ul li ul.dropdown {
@@ -78,7 +131,45 @@ body {
     padding: 0;
 }
 
-/* Navbar Brand */
+.navbar ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.search-box {
+    position: relative;
+}
+
+
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: none; /* Hide initially */
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #ffcc00;
+}
+
+.suggestions.show {
+    display: block; /* Show when search input is focused or has results */
+}
+
 .navbar .brand {
     font-size: 1.8em;
     font-weight: bold;
@@ -87,7 +178,6 @@ body {
     flex: 1;
 }
 
-/* Centered Navbar */
 .center-nav {
     display: flex;
     flex: 2;
@@ -101,45 +191,34 @@ body {
     margin-right: 20px;
 }
 
+.center-nav ul li {
+    margin-left: 20px;
+}
+
 .center-nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 1.1em;
     transition: background 0.3s;
+    font-size: 1.1em;
 }
 
 .center-nav ul li a:hover {
+    /* background-color: #ffcc00; */
     border-radius: 4px;
 }
 
-/* Underline Effect on Hover */
-.center-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-    background-color: #686764;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: bottom right;
+.center-nav .search-box {
+    position: relative;
 }
 
-.center-nav ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.center-nav .search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
 }
 
-/* Adjusting Icon Size and Spacing */
-.center-nav ul li a i {
-    margin-right: 8px;
-    font-size: 1.1em;
-    vertical-align: middle;
-}
-
-/* Right Navbar */
 .right-nav ul {
     list-style-type: none;
     display: flex;
@@ -150,6 +229,47 @@ body {
     margin-left: 20px;
 }
 
+.right-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s;
+    font-size: 1.1em;
+}
+
+.right-nav ul li a:hover {
+    /* background-color: #ffcc00; */
+    border-radius: 4px;
+}
+
+/* Search Suggestions */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: none; /* Hide initially */
+}
+
+.suggestions li {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #ffcc00;
+}
+
+.suggestions.show {
+    display: block; /* Show when search input is focused or has results */
+}
 .right-nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -166,13 +286,13 @@ body {
 }
 
 .right-nav ul li a:hover {
-    background-position: right center;
+    background-position: right center; /* Change the direction of the gradient */
     color: #fff;
     border-color: #ffcc00;
     transform: scale(1.05);
 }
 
-/* Glowing Effect on Hover */
+/* Adding a glowing effect on hover */
 .right-nav ul li a::before {
     content: '';
     position: absolute;
@@ -190,199 +310,124 @@ body {
 .right-nav ul li a:hover::before {
     opacity: 1;
 }
-
+/* Adjusting icon size and spacing */
+.center-nav ul li a i {
+    margin-right: 8px;
+    font-size: 1.1em; /* Adjust icon size */
+    vertical-align: middle;
+}
 /* Search Box */
 .search-box {
     position: relative;
     display: inline-block;
-    margin-right: 30px;
 }
 
 .search-box input {
-    padding: 10px;
+    padding: 10px 40px 10px 10px; /* Add right padding for the icon */
     border: none;
     border-radius: 4px;
     width: 390px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 40px 10px 10px;
 }
 
 .search-icon {
     position: absolute;
     top: 50%;
-    right: 5px;
+    right: 26px;
     transform: translateY(-50%);
-    color: rgb(31, 20, 20);
+    color: rgb(199, 199, 199); /* Adjust the color */
     font-size: 1.2em;
-    pointer-events: none;
+    pointer-events: none; /* Make the icon unclickable */
 }
-
-/* Search Suggestions */
-.suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display: none;
-}
-
-.suggestions li {
-    padding: 10px 20px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.suggestions li:hover {
-    background-color: #ffcc00;
-}
-
-.suggestions.show {
-    display: block;
-}
-/* Existing styles... */
 
 /* Form Container */
 .form-container {
+    opacity: 75%;
     margin: 120px auto;
-    margin-left: 32px;
     padding: 20px;
-    max-width: 650px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border-radius: 12px;
-    box-shadow: 0px 4px 30px rgba(215, 101, 101, 0.6);
-    color: #ffcc00;
-    border: 1px solid #090808;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    max-width: 100%;
+    color: #fff;
 }
 
 .form-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #ff6600;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 2em;
 }
 
+#sell-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+}
+
+/* Form Group */
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-size: 1.1em;
-    color: #ffcc00;
 }
 
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="file"] {
-    width: 100%;
     padding: 10px;
+    border-radius: 4px;
     border: none;
-    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
     font-size: 1em;
-    color: #fff;
-    background-color: #333;
-    box-shadow: inset 0px 0px 8px rgba(128, 41, 41, 0.7);
-    transition: all 0.3s ease;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="number"]:focus,
-.form-group input[type="file"]:focus {
-    outline: none;
-    box-shadow: inset 0px 0px 12px rgba(117, 105, 97, 0.8);
+.form-group #account-image {
+    padding: 5px;
 }
 
-#image-preview {
+.form-group #image-preview {
     margin-top: 10px;
-    text-align: center;
 }
 
-#image-preview img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Submit Button */
+/* Full-width for specific elements */
+.form-group:nth-child(7),
+.form-group:nth-child(8),
 .sell-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    font-size: 1.2em;
-    font-weight: bold;
+    grid-column: span 3;
+}
+
+/* Button Styling */
+.sell-btn {
+    opacity: 100%;
+    padding: 15px;
+    background-color: #ff6600;
     color: #fff;
-    background: linear-gradient(145deg, #ff3300, #ff6600);
     border: none;
-    border-radius: 8px;
-    transition: all 0.3s;
+    border-radius: 4px;
     cursor: pointer;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+    transition: background 0.3s ease-in-out;
+    text-align: center;
 }
 
 .sell-btn:hover {
-    background: linear-gradient(145deg, #ff6600, #ff3300);
-    transform: translateY(-2px);
-    box-shadow: 0px 4px 12px rgba(255, 102, 0, 0.5);
+    background-color: #ff3300;
 }
 
-/* Mobile Responsiveness */
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
-    .form-container {
-        padding: 15px;
+    #sell-form {
+        grid-template-columns: 1fr;
     }
 
+    .form-group:nth-child(7),
+    .form-group:nth-child(8),
     .sell-btn {
-        font-size: 1em;
-        padding: 10px;
+        grid-column: span 1;
     }
-}
-
-/* Adding Google Font - Orbitron */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-.sell-account-container {
-    text-align: center;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #ff4b4b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e43c3c;
-}
-
-.account-details {
-    display: none; /* Hidden initially */
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.account-details h2 {
-    margin-top: 0;
-}
-
-.error-message {
-    margin-top: 20px;
-    color: #ff4b4b;
-    font-size: 14px;
-    display: none; /* Hidden initially */
 }
