@@ -32,7 +32,7 @@ document.addEventListener('click', function(e) {
         suggestionsList.style.display = 'none';
     }
 });
-
+/*
 // Image Preview
 imageInput.addEventListener('change', function() {
     const file = imageInput.files[0];
@@ -45,7 +45,7 @@ imageInput.addEventListener('change', function() {
     } else {
         imagePreview.innerHTML = '';
     }
-});
+});*/
 
 // Handle Form Submission
 document.getElementById('sell-form').addEventListener('submit', function(e) {
