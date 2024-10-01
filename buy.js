@@ -1,129 +1,56 @@
-// // Sample data for available accounts
-// const accounts = [
-//     { id: 1, name: 'Epic Warrior', game: 'Clash of Clans', price: 99, image: 'assets/abc.jpg' },
-//     { id: 2, name: 'Master Strategist', game: 'Clash Royale', price: 149, image: 'assets/clash-royale.jpg' },
-//     { id: 3, name: 'Super Survivor', game: 'PUBG Mobile', price: 199, image: 'assets/pubg-mobile.jpg' }
-// ];
+document.addEventListener('DOMContentLoaded', function () {
+    const accountsContainer = document.getElementById('accounts-container');
+    const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
 
-// const accountsList = document.getElementById('accounts-list');
-// const suggestionsList = document.getElementById('suggestions-list');
+    if (accounts.length === 0) {
+        accountsContainer.innerHTML = '<p>No accounts listed yet.</p>';
+    } else {
+        accounts.forEach((account, index) => {
+            // Create card element
+            const card = document.createElement('div');
+            card.classList.add('account-card');
 
-// // Load available accounts into the main section
-// window.onload = function() {
-//     loadAccounts();
-// };
+            // Minimal information and first image
+            card.innerHTML = `
+                <img src="${account.images[0]}" alt="${account.gameName}" class="card-image">
+                <h3>${account.gameName}</h3>
+                <p>Price: $${account.price}</p>
+                <button class="view-details-btn" data-index="${index}">View Details</button>
+            `;
 
-// function loadAccounts() {
-//     accountsList.innerHTML = '';
-//     accounts.forEach(account => {
-//         const accountItem = document.createElement('div');
-//         accountItem.classList.add('account-item');
-//         accountItem.innerHTML = `
-//             <img src="${account.image}" alt="${account.name}">
-//             <div class="account-details">
-//                 <h3>${account.name}</h3>
-//                 <p>Game: ${account.game}</p>
-//                 <p>Price: $${account.price}</p>
-//                 <button onclick="showAccountDetails(${account.id})">View Details</button>
-//             </div>
-//         `;
-//         accountsList.appendChild(accountItem);
-//     });
-// }
+            // Append card to container
+            accountsContainer.appendChild(card);
+        });
+    }
 
-// let orders = [];
+    // Handle 'View Details' button click
+    document.querySelectorAll(".view-details").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const accountId = e.target.dataset.accountId; // Retrieve account ID from the button's data attribute
+            window.location.href = `details.html?id=${accountId}`;
+        });
+    });
+    
+});
 
-// // Function to show account details in a modal
-// function showAccountDetails(accountId) {
-//     const account = accounts.find(acc => acc.id === accountId);
-//     const modal = document.getElementById('accountModal');
-//     document.getElementById('accountImage').src = account.image;
-//     document.getElementById('accountName').innerText = account.name;
-//     document.getElementById('accountGame').innerText = `Game: ${account.game}`;
-//     document.getElementById('accountPrice').innerText = `Price: $${account.price}`;
-//     modal.style.display = 'block';
+// Function to display account details (you can use a modal or a new page for this)
+function showAccountDetails(index) {
+    const accounts = JSON.parse(localStorage.getItem('accounts'));
+    const account = accounts[index];
 
-//     // Confirm Purchase button action
-//     document.getElementById('confirmPurchase').onclick = function() {
-//         addOrder(account);
-//         modal.style.display = 'none';
-//         showPaymentModal();
-//     };
-// }
+    // Clear container and show detailed information (or open modal)
+    const accountDetailsContainer = document.getElementById('account-details-container');
+    accountDetailsContainer.innerHTML = `
+        <h2>${account.gameName}</h2>
+        <p>Player ID: ${account.playerId}</p>
+        <p>Player Level: ${account.playerLevel}</p>
+        <p>Evo Level: ${account.evoLevel}</p>
+        <p>Achievement Points: ${account.achievementPoints}</p>
+        <p>Price: $${account.price}</p>
+        <p>Description: ${account.accountDetails}</p>
+        <h3>Images:</h3>
+        ${account.images.map(img => `<img src="${img}" alt="${account.gameName}" class="detail-image">`).join('')}
+    `;
 
-// // Function to add an order to the orders list
-// function addOrder(account) {
-//     orders.push(account);
-//     updateOrdersList();
-// }
-
-// // Function to update the orders section
-// function updateOrdersList() {
-//     const ordersList = document.getElementById('orders-list');
-//     ordersList.innerHTML = '';
-
-//     if (orders.length === 0) {
-//         ordersList.innerHTML = '<p>No orders placed yet.</p>';
-//     } else {
-//         orders.forEach(order => {
-//             const orderItem = document.createElement('div');
-//             orderItem.classList.add('account-item');
-//             orderItem.innerHTML = `
-//                 <img src="${order.image}" alt="${order.name}">
-//                 <div class="account-details">
-//                     <h3>${order.name}</h3>
-//                     <p>Game: ${order.game}</p>
-//                     <p>Price: $${order.price}</p>
-//                 </div>
-//             `;
-//             ordersList.appendChild(orderItem);
-//         });
-//     }
-// }
-
-// // Function to show the payment modal
-// function showPaymentModal() {
-//     const paymentModal = document.getElementById('paymentModal');
-//     paymentModal.style.display = 'block';
-// }
-
-// // Function to close the modal when clicking outside or on the close button
-// document.addEventListener('click', function(event) {
-//     if (event.target.classList.contains('close')) {
-//         event.target.closest('.modal').style.display = 'none';
-//     }
-//     if (event.target === document.getElementById('accountModal') || event.target === document.getElementById('paymentModal')) {
-//         event.target.style.display = 'none';
-//     }
-// });
-
-// // Toggle Orders section visibility when Orders button is clicked
-// document.getElementById('orders-button').onclick = function() {
-//     const ordersSection = document.getElementById('orders');
-//     if (ordersSection.style.display === 'block') {
-//         ordersSection.style.display = 'none';
-//     } else {
-//         updateOrdersList(); // Update orders list before showing
-//         ordersSection.style.display = 'block';
-//     }
-// };
-
-// // Search functionality with suggestions
-// document.getElementById('search-input').addEventListener('input', function(event) {
-//     const searchQuery = event.target.value.toLowerCase();
-//     suggestionsList.innerHTML = '';
-//     const filteredAccounts = accounts.filter(account => account.name.toLowerCase().includes(searchQuery));
-
-//     filteredAccounts.forEach(account => {
-//         const suggestionItem = document.createElement('li');
-//         suggestionItem.innerText = account.name;
-//         suggestionItem.onclick = function() {
-//             document.getElementById('search-input').value = account.name;
-//             suggestionsList.innerHTML = '';
-//             showAccountDetails(account.id);
-//         };
-//         suggestionsList.appendChild(suggestionItem);
-//     });
-// });
-
-
+    // Optionally, you can also display the details in a modal for better UX
+}

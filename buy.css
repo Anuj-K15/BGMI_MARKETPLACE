@@ -450,3 +450,28 @@ a{
     text-decoration: none;  
     color: #c0392b;
 }
+
+.account-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+#account-details-container {
+    margin-top: 20px;
+}
